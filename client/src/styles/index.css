@@ -1,0 +1,115 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 🔧 Komponenttityylit */
+@layer components {
+  .input {
+    @apply w-full px-4 py-3 bg-white border border-gray-300 rounded-xl shadow-sm focus:outline-none focus:ring-2 focus:ring-green-400 transition duration-200;
+  }
+
+  .btn {
+    @apply bg-green-500 hover:bg-green-600 text-white font-semibold px-4 py-2 rounded-xl shadow-md transition duration-200;
+  }
+
+  .btn-icon {
+    @apply bg-green-500 hover:bg-green-600 text-white text-xl w-10 h-10 flex items-center justify-center rounded-full shadow-md transition duration-200;
+  }
+
+  .card {
+    @apply bg-white p-6 rounded-2xl shadow-xl space-y-4;
+  }
+
+  .title {
+    @apply text-3xl font-bold text-green-600 text-center tracking-tight;
+  }
+
+  .fade-in {
+    animation: fadeIn 0.4s ease-in-out;
+  }
+}
+
+/* 🎞️ Fade-in animaatio */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 📄 Perustyyli */
+body {
+  @apply bg-[#f6f8f9] text-gray-800 antialiased min-h-screen;
+  font-family: 'Inter', sans-serif;
+}
+
+/* 🔖 Badge-tyylit */
+.badge {
+  @apply text-xs font-medium px-2 py-1 rounded-full;
+}
+.badge-health {
+  @apply bg-green-100 text-green-700;
+}
+.badge-study {
+  @apply bg-blue-100 text-blue-700;
+}
+.badge-work {
+  @apply bg-yellow-100 text-yellow-700;
+}
+.badge-sleep {
+  @apply bg-purple-100 text-purple-700;
+}
+.badge-other {
+  @apply bg-gray-200 text-gray-700;
+}
+
+/* 📅 React Calendar -tyylit */
+.react-calendar {
+  max-width: 320px;
+  font-family: 'Inter', sans-serif;
+  background-color: white;
+  border-radius: 1rem;
+  padding: 1.25rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.react-calendar__navigation button {
+  @apply text-sm font-medium text-gray-600 hover:text-green-600;
+}
+
+.react-calendar__tile {
+  border-radius: 0.75rem !important;
+  padding: 0.75rem 0 !important;
+  transition: all 0.2s ease-in-out;
+}
+
+.react-calendar__tile--active {
+  background: #10b981 !important;
+  color: white !important;
+  font-weight: 600;
+}
+
+.react-calendar__tile--now {
+  background: #dcfce7 !important;
+  font-weight: 600;
+  border: 1px solid #34d399 !important;
+}
+
+.react-calendar__tile:hover {
+  background: #f0fdf4 !important;
+}
+
+/* Pisteet päivien alle (suoritetut habitit) */
+.react-calendar__tile div.dot {
+  margin-top: 0.25rem;
+  width: 6px;
+  height: 6px;
+  background-color: #34d399;
+  border-radius: 9999px;
+  margin-left: auto;
+  margin-right: auto;
+}
